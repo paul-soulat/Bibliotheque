@@ -1,0 +1,10 @@
+//MO004-005.TXT ANA00004 TO ANA00005
+T_Genres		TAR	68	nouvelle taille enregistrement : 68
+T_Genres		IDE+*		fichier avec identifiant
+T_Genres	IDT_Genres	RUB+		IDT_Genres est une nouvelle clé
+T_Auteurs		TAR	68	nouvelle taille enregistrement : 68
+T_Auteurs		IDE+*		fichier avec identifiant
+T_Auteurs	IDT_Auteurs	RUB+		IDT_Auteurs est une nouvelle clé
+T_Editeurs		TAR	68	nouvelle taille enregistrement : 68
+T_Editeurs		IDE+*		fichier avec identifiant
+T_Editeurs	IDT_Editeurs	RUB+		IDT_Editeurs est une nouvelle clé

@@ -1,0 +1,10 @@
+//MO000-001.TXT ANA00000 TO ANA00001
+T_Livres		NFI		nouveau fichier
+T_Genres		NFI		nouveau fichier
+T_Auteurs		NFI		nouveau fichier
+T_Editeurs		NFI		nouveau fichier
+T_Livres_T_Auteurs		NFI		nouveau fichier
+Contrainte_T_Livres_T_Genres		NWL	T_Genres (Genre) et T_Livres (Genre)	Nouvelle liaison entre les fichiers T_Genres (Genre) et T_Livres (Genre)
+Contrainte_T_Livres_T_Auteurs		NWL	T_Livres (IDT_Livres) et T_Livres_T_Auteurs (IDT_Livres)	Nouvelle liaison entre les fichiers T_Livres (IDT_Livres) et T_Livres_T_Auteurs (IDT_Livres)
+Contrainte_T_Auteurs_T_Livres		NWL	T_Auteurs (Auteur) et T_Livres_T_Auteurs (Auteur)	Nouvelle liaison entre les fichiers T_Auteurs (Auteur) et T_Livres_T_Auteurs (Auteur)
+Contrainte_T_Livres_T_Editeurs		NWL	T_Editeurs (Editeur) et T_Livres (Editeur)	Nouvelle liaison entre les fichiers T_Editeurs (Editeur) et T_Livres (Editeur)

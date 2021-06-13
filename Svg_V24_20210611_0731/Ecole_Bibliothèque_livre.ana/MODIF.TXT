@@ -1,0 +1,5 @@
+//MO002-003.TXT ANA00002 TO ANA00003
+T_Livres_T_Auteurs		FIC-	T_Livres_T_Auteurs	Fichier supprimé T_Livres_T_Auteurs
+Contrainte_T_Livres_T_Auteurs		NWL	T_Auteurs (Auteur) et T_Livres (Auteur)	Nouvelle liaison entre les fichiers T_Auteurs (Auteur) et T_Livres (Auteur)
+Contrainte_T_Livres_T_Auteurs		DEL	T_Livres (IDT_Livres) et T_Livres_T_Auteurs (IDT_Livres)	Liaison supprimée entre les fichiers T_Livres (IDT_Livres) et T_Livres_T_Auteurs (IDT_Livres)
+Contrainte_T_Auteurs_T_Livres		DEL	T_Auteurs (Auteur) et T_Livres_T_Auteurs (Auteur)	Liaison supprimée entre les fichiers T_Auteurs (Auteur) et T_Livres_T_Auteurs (Auteur)

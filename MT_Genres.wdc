@@ -1,0 +1,127 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : MT_Genres
+ major_version : 25
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x10c2fb2a00478886
+ internal_properties : BQAAAAUAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1-
+      MT_Genres est une Classe <mapping=T_Genres><§rad:1§>
+      prive
+      	// Le code se trouvant entre <MAPPING> et <FIN> est généré automatiquement.<§rad:1§>
+      	// Il sera effacé et recréé entièrement à chaque génération depuis le menu contextuel<§rad:1§>
+      	// du fichier dans l'explorateur de projet "..Regénérer la classe modèle".<§rad:1§>
+      	<MAPPING><§rad:1§>
+      	m_nIDT_Genres	est un entier sur 8 octets	<mapping=IDT_Genres, clé unique><§rad:1§>
+      	m_sGenre		est une chaîne ANSI			<mapping=Genre><§rad:1§>
+      	<FIN><§rad:1§>
+      	<§rad:1§>
+      FIN<§rad:1§>
+      <§rad:1§>
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1207803807900666006
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur()<§rad:1§>
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1207803807900731542
+     type_code : 28
+     code : |1-
+      PROCEDURE Destructeur()<§rad:1§>
+     type : 655360
+   -
+     name : Charge
+     procedure_id : 1207810018419514512
+     type_code : 12
+     code : |1-
+      // Résumé : <indiquez ici ce que fait la procédure>
+      // Syntaxe :
+      //[ <Résultat> = ] Charge (<sGenre> est chaîne)
+      //
+      // Paramètres :
+      //	sGenre (chaîne ANSI) : <indiquez ici le rôle de sGenre>
+      // Valeur de retour :
+      // 	chaîne ANSI : // 	Aucune
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCEDURE Charge(LOCAL sGenre est une chaine)
+      sResultat est une chaine = "OK"<§rad:1§>
+      HLitRecherchePremier(T_Genres,Genre,sGenre)
+      <§rad:1§>
+      SI HTrouve(T_Genres) ALORS<§rad:1§>
+      	:m_sGenre=T_Genres.Genre<§rad:1§>
+      SINON <§rad:1§>
+      	sResultat = "Ce genre n'est pas dans la base de données"<§rad:1§>
+      FIN<§rad:1§>
+      <§rad:1§>
+      HFerme(T_Genres)<§rad:1§>
+      RENVOYER sResultat<§rad:1§>
+      <§rad:1§>
+      <§rad:1§>
+      <§rad:1§>
+     type : 458752
+   -
+     name : Sauve
+     procedure_id : 1207810048484357964
+     type_code : 12
+     code : |1+
+      // Résumé : <indiquez ici ce que fait la procédure><§rad:1§>
+      // Syntaxe :<§rad:1§>
+      // Sauve ()<§rad:1§>
+      //<§rad:1§>
+      // Paramètres :<§rad:1§>
+      //	Aucun<§rad:1§>
+      // Valeur de retour :<§rad:1§>
+      // 	Aucune<§rad:1§>
+      //<§rad:1§>
+      // Exemple :<§rad:1§>
+      // Indiquez ici un exemple d'utilisation.<§rad:1§>
+      //<§rad:1§>
+      PROCEDURE Sauve()<§rad:1§>
+      sResultat est une chaine = "OK"
+      
+      SI :m_nIDT_Genres = 0 OU :m_nIDT_Genres = "" OU :m_nIDT_Genres = Null ALORS
+      	
+      	HRAZ(T_Genres)
+      	
+      SINON
+      	
+      	HLitRecherchePremier(T_Genres,IDT_Genres,m_nIDT_Genres)
+      	
+      FIN
+      
+      MémoireVersFichier(objet,T_Genres)
+      SI HEnregistre(T_Genres) = Faux ALORS
+      	sResultat = "Erreur lors de l'enregistrement"
+      FIN
+      
+      RENVOYER sResultat
+      
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BQAAAAUAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x10c2fb2a005088a6
+  internal_properties : BQAAAAUAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BQAAAAUAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

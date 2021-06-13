@@ -1,0 +1,126 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : MT_Editeurs
+ major_version : 25
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x10c2fb2500317740
+ internal_properties : BQAAAAUAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1-
+      MT_Editeurs est une Classe <mapping=T_Editeurs><§rad:1§>
+      <§rad:1§>
+      	// Le code se trouvant entre <MAPPING> et <FIN> est généré automatiquement.<§rad:1§>
+      	// Il sera effacé et recréé entièrement à chaque génération depuis le menu contextuel<§rad:1§>
+      	// du fichier dans l'explorateur de projet "..Regénérer la classe modèle".<§rad:1§>
+      	<MAPPING><§rad:1§>
+      	m_nIDT_Editeurs	est un entier sur 8 octets	<mapping=IDT_Editeurs, clé unique><§rad:1§>
+      	m_sEditeur		est une chaîne ANSI			<mapping=Editeur><§rad:1§>
+      	<FIN><§rad:1§>
+      	<§rad:1§>
+      FIN<§rad:1§>
+      <§rad:1§>
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1207803786424383296
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur()<§rad:1§>
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1207803786424448832
+     type_code : 28
+     code : |1-
+      PROCEDURE Destructeur()<§rad:1§>
+     type : 655360
+   -
+     name : Charge
+     procedure_id : 1207803919570825039
+     type_code : 12
+     code : |1-
+      // Résumé : <indiquez ici ce que fait la procédure>
+      // Syntaxe :
+      //[ <Résultat> = ] Charge (<sEditeur> est chaîne)
+      //
+      // Paramètres :
+      //	sEditeur (chaîne ANSI) : <indiquez ici le rôle de sResultat>
+      // Valeur de retour :
+      // 	chaîne ANSI : // 	Aucune
+      //
+      // Exemple :
+      // Indiquez ici un exemple d'utilisation.
+      //
+      PROCEDURE Charge(local sEditeur est une chaîne)
+      sResultat est une chaine = "OK"<§rad:1§>
+      HLitRecherchePremier(T_Editeurs,Editeur,sEditeur)
+      <§rad:1§>
+      SI HTrouve(T_Editeurs) ALORS<§rad:1§>
+      	:m_sEditeur=T_Editeurs.Editeur<§rad:1§>
+      SINON <§rad:1§>
+      	sResultat = "Cet éditeur n'est pas dans la base de données"<§rad:1§>
+      FIN<§rad:1§>
+      <§rad:1§>
+      HFerme(T_Editeurs)<§rad:1§>
+      RENVOYER sResultat<§rad:1§>
+      <§rad:1§>
+     type : 458752
+   -
+     name : Sauve
+     procedure_id : 1207803941045667034
+     type_code : 12
+     code : |1+
+      // Résumé : <indiquez ici ce que fait la procédure><§rad:1§>
+      // Syntaxe :<§rad:1§>
+      // Sauve ()<§rad:1§>
+      //<§rad:1§>
+      // Paramètres :<§rad:1§>
+      //	Aucun<§rad:1§>
+      // Valeur de retour :<§rad:1§>
+      // 	Aucune<§rad:1§>
+      //<§rad:1§>
+      // Exemple :<§rad:1§>
+      // Indiquez ici un exemple d'utilisation.<§rad:1§>
+      //<§rad:1§>
+      PROCEDURE Sauve()<§rad:1§>
+      <§rad:1§>
+      sResultat est une chaine = "OK"
+      
+      SI :m_nIDT_Editeurs = 0 OU :m_nIDT_Editeurs = "" OU :m_nIDT_Editeurs = Null ALORS
+      	
+      	HRAZ(T_Editeurs)
+      	
+      SINON
+      	
+      	HLitRecherchePremier(T_Editeurs,IDT_Editeurs,m_nIDT_Editeurs)
+      	
+      FIN
+      
+      MémoireVersFichier(objet,T_Editeurs)
+      SI HEnregistre(T_Editeurs) = Faux ALORS
+      	sResultat = "Erreur lors de l'enregistrement"
+      FIN
+      
+      RENVOYER sResultat
+      
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BQAAAAUAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x10c2fb25003a7750
+  internal_properties : BQAAAAUAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BQAAAAUAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

@@ -1,0 +1,290 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : MT_Livres
+ major_version : 25
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x10c2fe3b006183f8
+ internal_properties : BQAAAAUAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1-
+      MT_Livres est une Classe <mapping=T_Livres><§rad:1§>
+      
+      prive
+      	// Le code se trouvant entre <MAPPING> et <FIN> est généré automatiquement.<§rad:1§>
+      	// Il sera effacé et recréé entièrement à chaque génération depuis le menu contextuel<§rad:1§>
+      	// du fichier dans l'explorateur de projet "..Regénérer la classe modèle".<§rad:1§>
+      	<MAPPING><§rad:1§>
+      	m_nIDT_Livres	est un entier sur 8 octets	<mapping=IDT_Livres, clé unique><§rad:1§>
+      	m_sTitre		est une chaîne ANSI			<mapping=Titre><§rad:1§>
+      	m_sGenre		est une chaîne ANSI			<mapping=Genre><§rad:1§>
+      	m_dDateParution	est une date				<mapping=DateParution><§rad:1§>
+      	m_sISBN			est une chaîne ANSI			<mapping=ISBN><§rad:1§>
+      	m_sAuteur		est une chaîne ANSI			<mapping=Auteur><§rad:1§>
+      	m_sRésumé		est une chaîne				<mapping=Résumé><§rad:1§>
+      	m_sEditeur		est une chaîne ANSI			<mapping=Editeur><§rad:1§>
+      	m_bufCouverture	est un buffer				<mapping=Couverture><§rad:1§>
+      	<FIN><§rad:1§>
+      	<§rad:1§>
+      FIN<§rad:1§>
+      <§rad:1§>
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1207807179451696120
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur()<§rad:1§>
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1207807179451761656
+     type_code : 28
+     code : |1-
+      PROCEDURE Destructeur()<§rad:1§>
+     type : 655360
+   -
+     name : Charge
+     procedure_id : 1207807458625553223
+     type_code : 12
+     code : |1-
+      // Résumé : <indiquez ici ce que fait la procédure><§rad:1§>
+      // Syntaxe :<§rad:1§>
+      //[ <Résultat> = ] Charge (<nIDT_Livres> est entier sur 8 octets)<§rad:1§>
+      //<§rad:1§>
+      // Paramètres :<§rad:1§>
+      //	nIDT_Livres (entier sur 8 octets) : <indiquez ici le rôle de nIDT_Livres><§rad:1§>
+      // Valeur de retour :<§rad:1§>
+      // 	chaîne ANSI : // 	Aucune<§rad:1§>
+      //<§rad:1§>
+      // Exemple :<§rad:1§>
+      // Indiquez ici un exemple d'utilisation.<§rad:1§>
+      //<§rad:1§>
+      PROCEDURE Charge(local nIDT_Livres est un entier sur 8 octets)<§rad:1§>
+      sResultat est une chaine = "OK"<§rad:1§>
+      <§rad:1§>
+      HLitRecherchePremier(T_Livres,IDT_Livres,nIDT_Livres)<§rad:1§>
+      si HTrouve(T_Livres) ALORS<§rad:1§>
+      	FichierVersMémoire(Objet,T_Livres)<§rad:1§>
+      sinon<§rad:1§>
+      	sResultat = "Livre non trouvé dans la bibliothèque"<§rad:1§>
+      FIN<§rad:1§>
+      <§rad:1§>
+      HFerme(T_Livres)<§rad:1§>
+      renvoyer sResultat<§rad:1§>
+     type : 458752
+   -
+     name : Sauve
+     procedure_id : 1207809103598082396
+     type_code : 12
+     code : |1+
+      // Résumé : <indiquez ici ce que fait la procédure><§rad:1§>
+      // Syntaxe :<§rad:1§>
+      //[ <Résultat> = ] Sauve ()<§rad:1§>
+      //<§rad:1§>
+      // Paramètres :<§rad:1§>
+      //	Aucun<§rad:1§>
+      // Valeur de retour :<§rad:1§>
+      // 	chaîne ANSI : // 	Aucune<§rad:1§>
+      //<§rad:1§>
+      // Exemple :<§rad:1§>
+      // Indiquez ici un exemple d'utilisation.<§rad:1§>
+      //<§rad:1§>
+      PROCEDURE Sauve()<§rad:1§>
+      <§rad:1§>
+      sResultat est une chaine = "OK"<§rad:1§>
+      <§rad:1§>
+      SI :m_nIDT_Livres = 0 OU :m_nIDT_Livres = "" OU :m_nIDT_Livres = Null ALORS<§rad:1§>
+      	<§rad:1§>
+      	HRAZ(T_Livres)<§rad:1§>
+      	<§rad:1§>
+      SINON<§rad:1§>
+      	<§rad:1§>
+      	HLitRecherchePremier(T_Livres,IDT_Livres,m_nIDT_Livres)<§rad:1§>
+      	<§rad:1§>
+      FIN<§rad:1§>
+      <§rad:1§>
+      MémoireVersFichier(objet,T_Livres)<§rad:1§>
+      si HEnregistre(T_Livres) = faux ALORS
+      	sResultat = "Erreur lors de l'enregistrement"<§rad:1§>
+      FIN<§rad:1§>
+      <§rad:1§>
+      renvoyer sResultat
+      
+     type : 458752
+  properties :
+   -
+     name : p_bufCouverture
+     identifier : 0x10c5f792016f44f0
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_bufCouverture() : buffer
+         
+         RENVOYER m_bufCouverture
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_bufCouverture(bufValeur est un buffer)
+         
+         m_bufCouverture=bufValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : p_dDateParution
+     identifier : 0x10c5f7990170600a
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_dDateParution() : date
+         
+         RENVOYER m_dDateParution
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_dDateParution(dValeur est une date)
+         
+         m_dDateParution=dValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : p_nIDT_Livres
+     identifier : 0x10c5f79f0171772c
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_nIDT_Livres() : entier sur 8 octets
+         
+         RENVOYER m_nIDT_Livres
+        type : 1966080
+     template_refs : []
+   -
+     name : p_sAuteur
+     identifier : 0x10c5f7a60172914b
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sAuteur() : chaîne
+         
+         RENVOYER m_sAuteur
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sAuteur(sValeur est une chaîne)
+         
+         m_sAuteur=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : p_sEditeur
+     identifier : 0x10c5f7ab0173a5fc
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sEditeur() : chaîne
+         
+         RENVOYER m_sEditeur
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sEditeur(sValeur est une chaîne)
+         
+         m_sEditeur=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : p_sGenre
+     identifier : 0x10c5f7b00174b89a
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sGenre() : chaîne
+         
+         RENVOYER m_sGenre
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sGenre(sValeur est une chaîne)
+         
+         m_sGenre=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : p_sISBN
+     identifier : 0x10c5f7b40175ca0e
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sISBN() : chaîne
+         
+         RENVOYER m_sISBN
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sISBN(sValeur est une chaîne)
+         
+         m_sISBN=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : p_sRésumé
+     identifier : 0x10c5f7b90176de81
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sRésumé() : chaîne
+         
+         RENVOYER m_sRésumé
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sRésumé(sValeur est une chaîne)
+         
+         m_sRésumé=sValeur
+        type : 2031616
+     template_refs : []
+   -
+     name : p_sTitre
+     identifier : 0x10c5f7be0177eecd
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sTitre() : chaîne
+         
+         RENVOYER m_sTitre
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE p_sTitre(sValeur est une chaîne)
+         
+         m_sTitre=sValeur
+        type : 2031616
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BQAAAAUAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x10c2fe3b006a8408
+  internal_properties : BQAAAAUAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BQAAAAUAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

@@ -1,0 +1,4 @@
+//MO001-002.TXT ANA00001 TO ANA00002
+Contrainte_T_Livres_T_Auteurs		MCL	1,n->0,n	
+Contrainte_T_Livres_T_Auteurs		MCL	0,1->1,1	
+Contrainte_T_Auteurs_T_Livres		MCL	0,1->1,1	
